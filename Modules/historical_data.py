@@ -53,4 +53,4 @@ def download_hist_data(symbol, start, end, interval, period, option):
         logger.error(f"Erreur lors du traitement de l'historique pour {symbol}: {e}")
 
 if __name__ == "__main__":
-    download_hist_data("AAPL", "2024-01-01", "2024-08-31", "1d", None, 1)
+    download_hist_data("AC.PA", "2024-01-01", "2024-08-31", "1d", None, 1)

@@ -12,3 +12,7 @@
 2024-08-31 13:34:38,272 - Modules.data_save - save_to - INFO - Fichier ./Files/None_historique_2024-08-31_13-34-37.xlsx sauvegardé avec succès.
 2024-08-31 13:34:38,273 - __main__ - process_hist - INFO - Historique du symbole AAPL sauvegardé avec succès.
 2024-08-31 13:34:38,273 - __main__ - download_hist_data - INFO - Fin du traitement pour AAPL.
+2024-08-31 14:04:45,926 - __main__ - download_hist_data - INFO - Traitement de l'historique pour le symbole AC.PA.
+2024-08-31 14:04:54,833 - Modules.data_save - save_to - INFO - Fichier ./Files/Accor_historique_2024-08-31_14-04-54.xlsx sauvegardé avec succès.
+2024-08-31 14:04:54,834 - __main__ - process_hist - INFO - Historique du symbole AC.PA sauvegardé avec succès.
+2024-08-31 14:04:54,834 - __main__ - download_hist_data - INFO - Fin du traitement pour AC.PA.
