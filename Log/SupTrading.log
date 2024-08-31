@@ -1,0 +1,14 @@
+2024-08-31 12:22:13,500 - __main__ - download_hist_data - INFO - Traitement de l'historique pour le symbole AAPL.
+2024-08-31 12:22:22,841 - Modules.data_save - save_to - WARNING - Extension 'xslx' incorrecte. Aucun fichier n'a été sauvegardé.
+2024-08-31 12:22:22,842 - __main__ - download_hist_data - INFO - Fin du traitement pour AAPL.
+2024-08-31 12:22:34,153 - __main__ - download_hist_data - INFO - Traitement de l'historique pour le symbole AAPL.
+2024-08-31 12:22:43,143 - Modules.data_save - save_to - INFO - Fichier ./Files/None_historique_2024-08-31_12-22-42.xlsx sauvegardé avec succès.
+2024-08-31 12:22:43,144 - __main__ - process_hist - INFO - Historique du symbole AAPL sauvegardé avec succès.
+2024-08-31 12:22:43,145 - __main__ - download_hist_data - INFO - Fin du traitement pour AAPL.
+2024-08-31 12:23:38,800 - __main__ - download_hist_data - INFO - Traitement de l'historique pour le symbole AAPL.
+2024-08-31 12:23:40,759 - __main__ - download_hist_data - ERROR - Erreur lors du traitement de l'historique pour AAPL: name 'viz' is not defined
+2024-08-31 13:34:17,992 - __main__ - download_hist_data - INFO - Traitement de l'historique pour le symbole AAPL.
+2024-08-31 13:34:28,270 - __main__ - process_hist - INFO - Historique du symbole AAPL visualisé avec succès.
+2024-08-31 13:34:38,272 - Modules.data_save - save_to - INFO - Fichier ./Files/None_historique_2024-08-31_13-34-37.xlsx sauvegardé avec succès.
+2024-08-31 13:34:38,273 - __main__ - process_hist - INFO - Historique du symbole AAPL sauvegardé avec succès.
+2024-08-31 13:34:38,273 - __main__ - download_hist_data - INFO - Fin du traitement pour AAPL.
