@@ -16,3 +16,15 @@
 2024-08-31 14:04:54,833 - Modules.data_save - save_to - INFO - Fichier ./Files/Accor_historique_2024-08-31_14-04-54.xlsx sauvegardé avec succès.
 2024-08-31 14:04:54,834 - __main__ - process_hist - INFO - Historique du symbole AC.PA sauvegardé avec succès.
 2024-08-31 14:04:54,834 - __main__ - download_hist_data - INFO - Fin du traitement pour AC.PA.
+2024-08-31 16:06:56,771 - yfinance - download - ERROR - 
+1 Failed download:
+2024-08-31 16:06:56,793 - yfinance - download - ERROR - ['AC.PA']: YFPricesMissingError('$%ticker%: possibly delisted; No price data found  (1m 2024-08-31 14:06:55.575809 -> 2024-08-31 16:06:55+02:00)')
+2024-08-31 16:06:56,965 - yfinance - download - ERROR - 
+1 Failed download:
+2024-08-31 16:06:56,965 - yfinance - download - ERROR - ['AI.PA']: YFPricesMissingError('$%ticker%: possibly delisted; No price data found  (1m 2024-08-31 14:06:56.796897 -> 2024-08-31 16:06:56+02:00)')
+2024-08-31 16:08:25,595 - yfinance - download - ERROR - 
+1 Failed download:
+2024-08-31 16:08:25,595 - yfinance - download - ERROR - ['AC.PA']: YFPricesMissingError('$%ticker%: possibly delisted; No price data found  (1m 2024-08-31 14:08:23.421514 -> 2024-08-31 16:08:23+02:00)')
+2024-08-31 16:08:25,665 - yfinance - download - ERROR - 
+1 Failed download:
+2024-08-31 16:08:25,665 - yfinance - download - ERROR - ['AI.PA']: YFPricesMissingError('$%ticker%: possibly delisted; No price data found  (1m 2024-08-31 14:08:25.598925 -> 2024-08-31 16:08:25+02:00)')
