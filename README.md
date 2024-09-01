@@ -36,11 +36,15 @@ git clone https://github.com/LisaSmh9/SUP_Trading.git
 
 **Naviguez vers le répertoire du projet :**
 
-``` cd SUP_Trading ``` 
+```
+cd SUP_Trading
+``` 
 
 **Installer les Dépendances :**
 Assurez-vous d'avoir pip installé, puis exécutez la commande suivante pour installer toutes les dépendances nécessaires :
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 ## 5. Configuration :
 ### Configuration de la Base de Données
@@ -49,6 +53,7 @@ Assurez-vous d'avoir pip installé, puis exécutez la commande suivante pour ins
 
 Créez un fichier .env à la racine du projet avec les variables suivantes :
 
+```
 DB_HOST=trading-server.database.windows.net
 
 DB_NAME=trading_db
@@ -56,7 +61,7 @@ DB_NAME=trading_db
 DB_USER=adminuser
 
 DB_PASSWORD=YourPasswordHere  
-
+```
 
 ### Configuration de l'Environnement
 Charger les Variables d'Environnement :
@@ -69,8 +74,7 @@ Les variables d'environnement définies dans le fichier .env seront automatiquem
 
 Créez un fichier configMail.json dans le répertoire configuration avec les détails suivants :
 
-`
-
+```
     "host": "smtp.gmail.com",
     
     "port": 465,
@@ -80,7 +84,7 @@ Créez un fichier configMail.json dans le répertoire configuration avec les dé
     "password": "*************",
     
     "to": "lisa.smah@supdevinci-edu.fr"
-`
+```
 
 ## 6. Fonctionnalités du Robot
 - Collecte Automatique de Données : Le robot récupère les données du CAC40 en temps réel à intervalles réguliers pendant les heures de trading.
