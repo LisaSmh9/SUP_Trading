@@ -14,39 +14,38 @@ Avant d'installer et de configurer le robot, assurez-vous d'avoir les éléments
 Le robot RPA développé se compose de plusieurs modules et fichiers de configuration. 
 
 ### 1. Répertoire configuration
-configBase.py : Ce fichier contient la configuration des variables d'environnement utilisées pour se connecter à la base de données Azure. 
-configMail.json : Ce fichier JSON contient la configuration nécessaire pour l'envoi des emails. 
+**configBase.py :** Ce fichier contient la configuration des variables d'environnement utilisées pour se connecter à la base de données Azure. 
+**configMail.json :** Ce fichier JSON contient la configuration nécessaire pour l'envoi des emails. 
 
 ### 2. Répertoire Modules
-data_save.py : Ce module gère la sauvegarde des données collectées sous forme de fichiers CSV ou Excel. Il contient des fonctions pour enregistrer les données boursières dans des formats exploitables.
-historical_data.py : Ce module est responsable de la collecte des données historiques sur les symboles boursiers spécifiés. Il télécharge les données depuis Yahoo Finance et les traite selon les besoins de l'utilisateur.
-mail_send.py : Ce module gère l'envoi des emails. Il contient des fonctions envoyer les emails.
-realtime_data.py : Ce module collecte les données en temps réel pour les symboles boursiers spécifiés. Il est utilisé pour surveiller en direct les variations des cours pendant les heures de trading.
-symbols.py : Ce fichier contient un dictionnaire des symboles boursiers et leurs noms respectifs. Il est utilisé pour mapper les symboles aux entreprises correspondantes.
-visualize.py : Ce module contient des fonctions pour visualiser les données boursières sous forme de graphiques. Il permet de générer des représentations visuelles des données collectées pour une meilleure compréhension.
+**data_save.py :** Ce module gère la sauvegarde des données collectées sous forme de fichiers CSV ou Excel. Il contient des fonctions pour enregistrer les données boursières dans des formats exploitables.
+**historical_data.py :** Ce module est responsable de la collecte des données historiques sur les symboles boursiers spécifiés. Il télécharge les données depuis Yahoo Finance et les traite selon les besoins de l'utilisateur.
+**mail_send.py :** Ce module gère l'envoi des emails. Il contient des fonctions envoyer les emails.
+**realtime_data.py :** Ce module collecte les données en temps réel pour les symboles boursiers spécifiés. Il est utilisé pour surveiller en direct les variations des cours pendant les heures de trading.
+**symbols.py :** Ce fichier contient un dictionnaire des symboles boursiers et leurs noms respectifs. Il est utilisé pour mapper les symboles aux entreprises correspondantes.
+**visualize.py :** Ce module contient des fonctions pour visualiser les données boursières sous forme de graphiques. Il permet de générer des représentations visuelles des données collectées pour une meilleure compréhension.
 
 ## 4. Installation
-Cloner le Répertoire du Projet :
-
+**Cloner le Répertoire du Projet :**
 Utilisez la commande suivante pour cloner le projet depuis le dépôt GitHub :
-git clone https://github.com/LisaSmh9/SUP_Trading.git
+```git clone https://github.com/LisaSmh9/SUP_Trading.git``` 
 
-Naviguez vers le répertoire du projet :
-cd SUP_Trading
-Installer les Dépendances :
+**Naviguez vers le répertoire du projet :**
+`cd SUP_Trading`
 
+**Installer les Dépendances :**
 Assurez-vous d'avoir pip installé, puis exécutez la commande suivante pour installer toutes les dépendances nécessaires :
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ## 5. Configuration :
 ### Configuration de la Base de Données
-Variables d'Environnement :
+**Variables d'Environnement :**
 Créez un fichier .env à la racine du projet avec les variables suivantes :
 
-DB_HOST=trading-server.database.windows.net
+```DB_HOST=trading-server.database.windows.net
 DB_NAME=trading_db
 DB_USER=adminuser
-DB_PASSWORD=YourPasswordHere
+DB_PASSWORD=YourPasswordHere``` 
 
 
 ### Configuration de l'Environnement
@@ -58,13 +57,13 @@ Les variables d'environnement définies dans le fichier .env seront automatiquem
 ### Configuration des Informations de Messagerie :
 Créez un fichier configMail.json dans le répertoire configuration avec les détails suivants :
 
-{
+`{
     "host": "smtp.gmail.com",
     "port": 465,
     "user": "lisasmah97@gmail.com",
     "password": "*************",
     "to": "lisa.smah@supdevinci-edu.fr"
-}
+}`
 
 ## 6. Fonctionnalités du Robot
 - Collecte Automatique de Données : Le robot récupère les données du CAC40 en temps réel à intervalles réguliers pendant les heures de trading.
@@ -87,9 +86,9 @@ Dans l'onglet Déclencheurs, ajoutez un nouveau déclencheur pour exécuter la t
 Configurer l'Action :
 Dans l'onglet Actions, configurez l'action pour exécuter le script Python robot_azure.py.
 Chemin du script :
-C:\...\Programs\Python\Python312\python.exe
+`C:\...\Programs\Python\Python312\python.exe`
 Argument :
-C:\chemin\vers\SUP_Trading\Modules\robot_azure.py
+`C:\chemin\vers\SUP_Trading\Modules\robot_azure.py`
 Configurer les Conditions et Paramètres :
 
 Définissez les conditions pour que la tâche s'exécute uniquement si la machine est allumée et non en mode batterie, par exemple.
@@ -99,13 +98,15 @@ Enregistrez la tâche et testez-la pour vous assurer qu'elle fonctionne correcte
 
 ## 8. Exécution Manuelle
 Pour exécuter le robot manuellement, ouvrez un terminal dans le répertoire du projet et exécutez :
-python -m Modules.robot_azure
+`python -m Modules.robot_azure`
 
 ## 9. FAQ
 Q: Comment puis-je changer l'heure de collecte des données ?
+
 A: Modifiez le déclencheur dans le Planificateur de tâches pour exécuter le script à l'heure souhaitée.
 
 Q: Comment puis-je ajouter de nouveaux symboles à surveiller ?
+
 A: Ajoutez les nouveaux symboles dans le fichier symbols.py.
 
 ## Conclusion
