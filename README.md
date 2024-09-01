@@ -64,8 +64,7 @@ Les variables d'environnement définies dans le fichier .env seront automatiquem
 
 Créez un fichier configMail.json dans le répertoire configuration avec les détails suivants :
 
-`{
-  
+` 
     "host": "smtp.gmail.com",
     
     "port": 465,
@@ -75,7 +74,7 @@ Créez un fichier configMail.json dans le répertoire configuration avec les dé
     "password": "*************",
     
     "to": "lisa.smah@supdevinci-edu.fr"
-}`
+`
 
 ## 6. Fonctionnalités du Robot
 - Collecte Automatique de Données : Le robot récupère les données du CAC40 en temps réel à intervalles réguliers pendant les heures de trading.
