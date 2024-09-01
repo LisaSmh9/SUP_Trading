@@ -66,9 +66,13 @@ Créez un fichier configMail.json dans le répertoire configuration avec les dé
 
 `{
     "host": "smtp.gmail.com",
+    
     "port": 465,
+    
     "user": "lisasmah97@gmail.com",
+    
     "password": "*************",
+    
     "to": "lisa.smah@supdevinci-edu.fr"
 }`
 
