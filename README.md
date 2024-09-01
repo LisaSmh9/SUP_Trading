@@ -4,11 +4,11 @@ Le robot RPA est conçu pour automatiser la collecte de données boursières du 
 ## 2. Pré-requis
 Avant d'installer et de configurer le robot, assurez-vous d'avoir les éléments suivants :
 
-Un serveur PostgreSQL fonctionnel sur Azure.
-Un environnement Python 3.12.4 installé.
-Accès administratif sur la machine où le robot sera exécuté.
-Configuration correcte du réseau pour permettre les connexions sortantes vers le serveur PostgreSQL sur le port 5432.
-Accès au Planificateur de tâches sous Windows.
+- Un serveur PostgreSQL fonctionnel sur Azure.
+- Un environnement Python 3.12.4 installé.
+- Accès administratif sur la machine où le robot sera exécuté.
+- Configuration correcte du réseau pour permettre les connexions sortantes vers le serveur PostgreSQL sur le port 5432.
+- Accès au Planificateur de tâches sous Windows.
 
 ## 3. Structure du robot
 Le robot RPA développé se compose de plusieurs modules et fichiers de configuration. 
@@ -62,7 +62,7 @@ Créez un fichier configMail.json dans le répertoire configuration avec les dé
     "host": "smtp.gmail.com",
     "port": 465,
     "user": "lisasmah97@gmail.com",
-    "password": "ajod tyvs agof aiqq",
+    "password": "*************",
     "to": "lisa.smah@supdevinci-edu.fr"
 }
 
