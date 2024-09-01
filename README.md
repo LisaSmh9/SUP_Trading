@@ -27,10 +27,13 @@ Le robot RPA développé se compose de plusieurs modules et fichiers de configur
 
 ## 4. Installation
 **Cloner le Répertoire du Projet :**
+
 Utilisez la commande suivante pour cloner le projet depuis le dépôt GitHub :
+
 ```git clone https://github.com/LisaSmh9/SUP_Trading.git``` 
 
 **Naviguez vers le répertoire du projet :**
+
 `cd SUP_Trading`
 
 **Installer les Dépendances :**
@@ -45,7 +48,7 @@ Créez un fichier .env à la racine du projet avec les variables suivantes :
 ```DB_HOST=trading-server.database.windows.net
 DB_NAME=trading_db
 DB_USER=adminuser
-DB_PASSWORD=YourPasswordHere``` 
+DB_PASSWORD=YourPasswordHere ``` 
 
 
 ### Configuration de l'Environnement
