@@ -42,23 +42,26 @@ Assurez-vous d'avoir pip installé, puis exécutez la commande suivante pour ins
 
 ## 5. Configuration :
 ### Configuration de la Base de Données
+
 **Variables d'Environnement :**
 
 Créez un fichier .env à la racine du projet avec les variables suivantes :
 
-```DB_HOST=trading-server.database.windows.net
+DB_HOST=trading-server.database.windows.net
 DB_NAME=trading_db
 DB_USER=adminuser
-DB_PASSWORD=YourPasswordHere``` 
+DB_PASSWORD=YourPasswordHere  
 
 
 ### Configuration de l'Environnement
 Charger les Variables d'Environnement :
+
 Les variables d'environnement définies dans le fichier .env seront automatiquement chargées par le script configBase.py.
 
 
 ## Configuration des Emails
 ### Configuration des Informations de Messagerie :
+
 Créez un fichier configMail.json dans le répertoire configuration avec les détails suivants :
 
 `{
