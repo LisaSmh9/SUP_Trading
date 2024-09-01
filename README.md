@@ -48,8 +48,11 @@ Assurez-vous d'avoir pip installé, puis exécutez la commande suivante pour ins
 Créez un fichier .env à la racine du projet avec les variables suivantes :
 
 DB_HOST=trading-server.database.windows.net
+
 DB_NAME=trading_db
+
 DB_USER=adminuser
+
 DB_PASSWORD=YourPasswordHere  
 
 
@@ -64,7 +67,8 @@ Les variables d'environnement définies dans le fichier .env seront automatiquem
 
 Créez un fichier configMail.json dans le répertoire configuration avec les détails suivants :
 
-` 
+`
+
     "host": "smtp.gmail.com",
     
     "port": 465,
