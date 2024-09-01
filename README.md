@@ -65,6 +65,7 @@ Les variables d'environnement définies dans le fichier .env seront automatiquem
 Créez un fichier configMail.json dans le répertoire configuration avec les détails suivants :
 
 `{
+  
     "host": "smtp.gmail.com",
     
     "port": 465,
