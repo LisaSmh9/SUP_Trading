@@ -94,37 +94,49 @@ Créez un fichier configMail.json dans le répertoire configuration avec les dé
 
 ## 7. Planification des Tâches
 Création d'une Tâche Planifiée sous Windows
-Ouvrir le Planificateur de Tâches :
+
+**Ouvrir le Planificateur de Tâches :**
 
 Ouvrez Gestion de l'ordinateur > Planificateur de tâches.
-Créer une Nouvelle Tâche :
+
+**Créer une Nouvelle Tâche :**
+
 Cliquez sur Créer une tâche....
+
 Donnez un nom à la tâche (par exemple, "Collecte de données boursières").
 
-Configurer l'Exécution :
+**Configurer l'Exécution :**
+
 Dans l'onglet Déclencheurs, ajoutez un nouveau déclencheur pour exécuter la tâche tous les jours ouvrables à 9h00.
 
-Configurer l'Action :
+**Configurer l'Action :**
+
 Dans l'onglet Actions, configurez l'action pour exécuter le script Python robot_azure.py.
-Chemin du script :
+
+**Chemin du script :**
 `C:\...\Programs\Python\Python312\python.exe`
-Argument :
+
+**Argument :**
 `C:\chemin\vers\SUP_Trading\Modules\robot_azure.py`
-Configurer les Conditions et Paramètres :
+
+**Configurer les Conditions et Paramètres :**
 
 Définissez les conditions pour que la tâche s'exécute uniquement si la machine est allumée et non en mode batterie, par exemple.
-Finaliser et Tester :
 
+**Finaliser et Tester :**
 Enregistrez la tâche et testez-la pour vous assurer qu'elle fonctionne correctement.
 
 ## 8. Exécution Manuelle
 Pour exécuter le robot manuellement, ouvrez un terminal dans le répertoire du projet et exécutez :
-`python -m Modules.robot_azure`
+```
+python -m Modules.robot_azure
+```
 
 ## 9. FAQ
 Q: Comment puis-je changer l'heure de collecte des données ?
 
 A: Modifiez le déclencheur dans le Planificateur de tâches pour exécuter le script à l'heure souhaitée.
+
 
 Q: Comment puis-je ajouter de nouveaux symboles à surveiller ?
 
