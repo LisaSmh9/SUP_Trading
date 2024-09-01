@@ -30,7 +30,11 @@ Le robot RPA développé se compose de plusieurs modules et fichiers de configur
 
 Utilisez la commande suivante pour cloner le projet depuis le dépôt GitHub :
 
-```git clone https://github.com/LisaSmh9/SUP_Trading.git ``` 
+```
+
+git clone https://github.com/LisaSmh9/SUP_Trading.git
+
+``` 
 
 **Naviguez vers le répertoire du projet :**
 
