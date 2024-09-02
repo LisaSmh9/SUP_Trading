@@ -90,4 +90,4 @@ def send_mail(subject: str, body: str, attachment: str):
 
 # Exemple d'utilisation
 if __name__ == "__main__":
-    send_mail("Test Subject", "This is a test email body", "C:/Users/lisas/Downloads/SupTrading/SupTrading/attachment.txt")
+    send_mail("Test Subject", "This is a test email body", "C:/Users/lisas/Downloads/SupTrading/SupTrading/realtime_data_20240902.xlsx")
