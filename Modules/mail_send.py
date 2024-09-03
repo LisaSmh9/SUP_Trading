@@ -3,16 +3,15 @@ import smtplib
 from email.message import EmailMessage
 import mimetypes
 import logging
+from datetime import datetime
+import yfinance as yf
 
-# Configuration du logging (meilleure gestion des erreurs et des journaux)
+# Configuration du logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_email_config(config_path: str):
     """
     Charge la configuration de l'email à partir d'un fichier JSON.
-
-    :param config_path: Chemin vers le fichier de configuration.
-    :return: Dictionnaire contenant la configuration de l'email.
     """
     try:
         with open(config_path, 'r') as file:
@@ -26,13 +25,6 @@ def load_email_config(config_path: str):
 def create_email_message(subject: str, body: str, sender: str, recipients: list, attachment: str):
     """
     Crée un message email avec une pièce jointe.
-
-    :param subject: Sujet de l'email.
-    :param body: Corps du message de l'email.
-    :param sender: Adresse email de l'expéditeur.
-    :param recipients: Liste des adresses email des destinataires.
-    :param attachment: Chemin vers le fichier à attacher à l'email.
-    :return: Objet EmailMessage.
     """
     try:
         msg = EmailMessage()
@@ -41,12 +33,12 @@ def create_email_message(subject: str, body: str, sender: str, recipients: list,
         msg['To'] = ', '.join(recipients)
         msg.set_content(body)
 
-        # Attache le fichier spécifié à l'email.
-        mime_type, _ = mimetypes.guess_type(attachment)
-        maintype, subtype = mime_type.split('/') if mime_type else ('application', 'octet-stream')
+        if attachment:
+            mime_type, _ = mimetypes.guess_type(attachment)
+            maintype, subtype = mime_type.split('/') if mime_type else ('application', 'octet-stream')
 
-        with open(attachment, 'rb') as file:
-            msg.add_attachment(file.read(), maintype=maintype, subtype=subtype, filename=file.name)
+            with open(attachment, 'rb') as file:
+                msg.add_attachment(file.read(), maintype=maintype, subtype=subtype, filename=file.name)
 
         logging.info("Message email créé avec succès.")
         return msg
@@ -57,9 +49,6 @@ def create_email_message(subject: str, body: str, sender: str, recipients: list,
 def send_email(msg: EmailMessage, email_config: dict):
     """
     Envoie un message email en utilisant les paramètres SMTP spécifiés dans la configuration.
-
-    :param msg: L'objet EmailMessage à envoyer.
-    :param email_config: Dictionnaire contenant la configuration de l'email (hôte, port, utilisateur, mot de passe).
     """
     try:
         with smtplib.SMTP_SSL(email_config['host'], email_config['port']) as server:
@@ -70,13 +59,22 @@ def send_email(msg: EmailMessage, email_config: dict):
         logging.error(f"Echec de l'envoi de l'email : {e}")
         raise
 
-def send_mail(subject: str, body: str, attachment: str):
+def get_cac40_closing_price():
+    """
+    Récupère la valeur de clôture actuelle du CAC 40 à partir de Yahoo Finance.
+    """
+    try:
+        ticker = "^FCHI"  # Symbole du CAC 40 sur Yahoo Finance
+        data = yf.download(ticker, period="1d", interval="1d")
+        closing_price = data['Close'].iloc[-1]  # Récupère la dernière valeur de clôture
+        return closing_price
+    except Exception as e:
+        logging.error(f"Erreur lors de la récupération de la valeur de clôture du CAC 40 : {e}")
+        raise
+
+def send_mail(subject: str, body: str, attachment: str = None):
     """
     Envoie un email avec un sujet, un corps de message et une pièce jointe.
-
-    :param subject: Sujet de l'email.
-    :param body: Corps du message de l'email.
-    :param attachment: Chemin vers le fichier à attacher à l'email.
     """
     try:
         email_config = load_email_config('./configuration/configMail.json')
@@ -90,4 +88,33 @@ def send_mail(subject: str, body: str, attachment: str):
 
 # Exemple d'utilisation
 if __name__ == "__main__":
-    send_mail("Test Subject", "This is a test email body", "C:/Users/lisas/Downloads/SupTrading/SupTrading/realtime_data_20240902.xlsx")
+    # Date actuelle pour personnaliser le sujet et le corps de l'email
+    current_date = datetime.now().strftime('%Y-%m-%d')
+
+    # Récupérer la valeur de clôture du CAC 40
+    cac40_close_value = get_cac40_closing_price()
+
+    # Sujet de l'email
+    subject = f"Résumé Quotidien du Marché - {current_date}"
+
+    # Corps de l'email
+    body = f"""
+    Bonjour,
+
+    Voici le résumé des activités du marché pour la journée du {current_date}.
+
+    Résumé Global du Marché :
+
+    CAC 40 : Clôture à {cac40_close_value:.2f}
+
+    Si vous avez besoin des données brutes pour une analyse plus approfondie, n'hésitez pas à consulter le fichier Excel joint.
+
+    Cordialement,
+    Équipe SUP_Trading
+    """
+
+    # Chemin vers le fichier Excel généré le jour même
+    excel_file = f"C:/SUP_Trading/SUP_Trading/realtime_data_{datetime.now().strftime('%Y%m%d')}.xlsx"
+
+    # Envoi de l'email avec le fichier Excel en pièce jointe
+    send_mail(subject, body, excel_file)
